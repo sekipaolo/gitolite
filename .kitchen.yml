@@ -1,0 +1,14 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: debian-6.0.10
+
+suites:
+  - name: sync
+    run_list: ['gitolite::install', 'gitolite::sync']
+    attributes:
